@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<select id="read" resultType="org.zerock.domain.BoardVO">
+	select*from tbl_board where bno = #{bno}
+	
+	<delete id="delete">
+		delete from tbl_board where bno = #{bno}
+	</delete>
+	
+	<update id="update">
+	set title= #{title},
+	content-#{content},
+	writer = #{writer},
+	updateDate = sysdate
+	where bno = #{bno}
+	</update>
+</select>
